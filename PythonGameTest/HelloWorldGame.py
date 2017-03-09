@@ -1,3 +1,4 @@
+# hello world 背景图片下，鼠标光标带有图片
 background_image_filename = 'resources/sushiplate.jpg'
 mouse_image_filename = 'resources/fugu.png'
 

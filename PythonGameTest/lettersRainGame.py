@@ -1,3 +1,4 @@
+## 触发鼠标、键盘事件，会显示当前事件内容
 import pygame
 from pygame.locals import  *
 from sys import exit
@@ -17,6 +18,7 @@ while True:
     event = pygame.event.wait()
     event_text.append(str(event))
     event_text = event_text[-SCREEN_SIZE[1]//font_height:]
+    ## python3 整数除/，会得到浮点类型，用//就不会，不然会报错typeError
     if event.type == QUIT:
         exit()
     screen.fill((0, 0, 0))
