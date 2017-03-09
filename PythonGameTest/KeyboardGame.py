@@ -39,6 +39,14 @@ while True:
             move[event.key] = 1
         elif event.type == KEYUP:
             move[event.key] = 0
+
+    CATONKEYBOARD = USEREVENT + 1
+    my_event = pygame.event.Event(CATONKEYBOARD, message = "Bad cat")
+    pygame.event.post(my_event)
+
+    for event in pygame.event.get():
+        if event.type == CATONKEYBOARD:
+            print(event.message)
     x -= move[K_LEFT]
     x += move[K_RIGHT]
     y -= move[K_UP]
@@ -47,3 +55,5 @@ while True:
     screen.fill((0, 0, 0))
     screen.blit(background, (x, y))
     pygame.display.update()
+
+
